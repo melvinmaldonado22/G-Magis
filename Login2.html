@@ -10,6 +10,22 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/Estilos-Logins.css" rel="stylesheet">
 
+    <style>
+        #div-login {
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0px 0px 1px 2px  #E1E1E1;
+            width: 420px;
+            padding: 20px 15px 180px 15px;
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 80px;
+            border-radius: 10px;
+        }
+        #span{
+            margin-right: 60px;
+        }
+    </style>
+
 </head>
 <body>
     <div class="container">
@@ -18,32 +34,26 @@
                 <img src="img/logo2Colores.png">
             </div>
             <div class="padingtext col-xl-12">
-                <h4>Iniciar Sesión</h4>
+                <h4>Nombre de Usuario</h4>
             </div>
             <div class="padingtext col-xl-12">
-                <h6>Utiliza tu cuenta de Google</h6>
+                <select class="form-control" name="slc-correo" id="slc-correo">
+                    <option value="1">Correo del usuario actual</option>
+                    <option value="2">Otra cuenta</option>
+                </select>
             </div>
             <form id="formulario">
                 <div class="col-xl-12 sm">
                     <input id="input" type="text" class="form-control" placeholder="correo electrónico teléfono">
                 </div>
-                <div class="padingform col-xl-12">
-                    <a class="a b" href="#">¿Haz olvidado tu correo electrónico?</a>
-                </div>
-                <div class="col-xl-12 sm">
-                    <p class="padingform" >
-                        ¿No es tu ordenador? Usa una ventana privada para iniciar sesión de forma privada
-                        <a class="padingform a b" href="#">Mas información</a>
-                    </p>
-                </div>
                 <div class="padingform col-xl-12 sm">
-                    <span><a id="span" class="a b" href="Registro1.html">Crear Cuenta</a></span>
-                    <span><a href="login2.html" id="btn" class="btn btn-primary">SIGUIENTE</a></span>
+                    <span><a id="span" class="a b" href="#">¿Haz olvidado tu contraseña?</a></span>
+                    <span><a href="PaginaPrincipal.html" id="btn" class="btn btn-primary">SIGUIENTE</a></span>
                 </div>
             </form>
         </div>
         <footer id="div-footer" class="row">
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-3">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-2">
                 <select class="form-control" name="slc-idioma" id="slc-idioma">
                     <option value="1">Español</option>
                     <option value="2">Inglés</option>
