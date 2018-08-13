@@ -125,9 +125,21 @@
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 sm">
                             <input id="txt-nombre" type="text" class="input form form-control" placeholder="Nombre">
                         </div>
+                        <div class="valid-feedback">
+                            El apellido esta correcto!    
+                          </div>
+                          <div class="invalid-feedback">
+                            Este campo esta incorrecto
+                          </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 sm">
                                 <input id="txt-apellidos" type="text" class="input form form-control" placeholder="Apellidos">
                         </div>
+                        <div class="valid-feedback">
+                            El apellido esta correcto!    
+                          </div>
+                          <div class="invalid-feedback">
+                            Este campo esta incorrecto
+                          </div>
                         <div class="col-xl-12 sm">
                                 <input id="txt-correo" type="text" class="input form form-control" placeholder="ejemplo@gmail.com">
                         </div>
@@ -135,10 +147,10 @@
                             <a class="padingform a">Puedes utilizar letras, números y puntos</a>
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 sm">
-                            <input id="txt-contraseña" type="text" class="input form form-control" placeholder="Contraseña">
+                            <input id="txt-contraseña" type="password" class="input form form-control" placeholder="Contraseña">
                         </div>
                         <span class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-12 sm">
-                            <input id="txt-confirmar-contraseña" type="text" class="input form form-control" placeholder="Confirmar la Contraseña">
+                            <input id="txt-confirmar-contraseña" type="password" class="input form form-control" placeholder="Confirmar la Contraseña">
                         </span>
                         <div id="ico" class="col-xl-1 sm a">
                             <i class="fas fa-eye-slash"></i>
@@ -148,7 +160,7 @@
                         </div>
                         <div class="form padingform col-xl-12 sm">
                             <span><a id="span" class="a b" href="login1.html">Prefiero iniciar sesión</a></span>
-                            <span><a href="Registro2.html" id="btn" class="btn btn-primary">SIGUIENTE</a></span>
+                            <span><a href="#" id="btn" class="btn btn-primary" >SIGUIENTE</a></span>
                         </div>
                     </div>
                 </form>
@@ -168,10 +180,36 @@
                     <option value="5">Japones</option>
                 </select>
             </div>
+            <div id="resultado">
+                SOLO PARA PRUEBAS
+            </div>
             <span class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12"><a href="#" class="padingform b">Ayuda</a></span>
             <span class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12"><a href="#" class="padingform b">Privacidad</a></span>
             <span class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12"><a href="#" class="padingform b">Términos</a></span>
         </footer>
     </div>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        
+        $("#btn").click(function(){
+            var parametros = 
+                "nombre="+$("#txt-nombre").val()+"&apellidos="+$("#txt-apellidos").val()+
+                "&correo="+$("#txt-correo").val()+"&contraseña="+$("#txt-contraseña").val()+
+                "&confirmar_contraseña="+$("#txt-confirmar-contraseña").val();
+                console.log("Informacion a enviar: " + parametros);
+            
+            $.ajax({
+                url:"procesar.php",
+                method:"POST",
+                data: parametros,
+                success:function(respuesta){
+                    console.log("El servidor envia lo siguiente: " + respuesta);
+                    $("#resultado").append("El servidor envia lo siguiente: " + respuesta + "<br>");
+                }
+            })
+        })
+
+    </script>
 </body>
 </html>
