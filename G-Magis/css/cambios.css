@@ -1,0 +1,153 @@
+.seccion1{
+    background-image: url("../img/seccion1.jpg");
+    height: auto;
+    width: 100%;
+    box-shadow:  0 .5rem 1rem rgba(0,0,0,.15)!important;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+}
+
+.seccion2{
+    background-image: url("../img/seccion2.jpg");
+    height: auto;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    padding:30px;
+    overflow: hidden;
+}
+
+.seccion3{
+    background-image: url("../img/seccion3.jpg");
+    height: auto;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    padding-top: 50px;
+}
+
+.seccion4{
+  background-image: url("../img/seccion4.jpg");
+  height: auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+}
+
+.logo{
+    height: 40px;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.centrado{
+    float: none;
+    margin: 0 auto;
+    position: relative;
+    width: 50%; 
+}
+
+.lista {
+    list-style: none;
+    padding: auto;
+    font-family: "metropolis-medium", sans-serif;
+    font-size: 15px;
+    color: rgba(224, 219, 219, 0.767);;
+    text-decoration-style: none; 
+}
+
+.a:hover{
+  text-decoration-line: none;
+  color: rgb(255, 255, 255);
+}
+
+.li{
+  display: inline;
+  text-align: center;
+  margin: 0 10px 0 0;
+}
+
+.navBar{
+  margin-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  padding-top: 15px
+}
+
+.card{
+  box-shadow: 1px 2px 2px rgba(26, 24, 24, 0.582);
+}
+
+.imagenes {
+overflow: hidden;
+padding: 0 75px;
+max-width: 1350px;
+margin-left: 30px;
+}
+
+h1{
+  color: rgb(255, 255, 255);
+}
+
+.featured__column--big .entry__category a {
+  background-color: rgba(172, 144, 144, 0.808);
+}
+
+.featured__column--small .entry__category a {
+  background-color: rgba(172, 144, 144, 0.808);;
+}
+
+#talla{
+  margin-top: 30px;
+}
+
+.container{
+  padding-bottom: 30px;
+}
+
+.card-columns .card {
+  margin-bottom: 2.75rem;
+}
+
+.card-columns {
+  column-gap: 2.5rem;
+}
+
+h5{
+  font-weight: bold;
+  font-size: 15px;
+}
+
+p{
+  font-size: 12px;
+}
+
+#tabla{
+  border: none;
+}
+.divimg {
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: right;
+  margin-bottom: 30px;
+}
+.footerHeader{
+  padding: 50px;
+  padding-top: 0px;
+}
+
+.creator:hover{
+  text-decoration-line: none;
+  color: #79786A;
+}
+
+.textcenter{
+  text-align: center;
+}
+
+#contenedorFooter{
+  padding-top: 50px;
+}
