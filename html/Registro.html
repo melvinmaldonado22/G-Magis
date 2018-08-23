@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>G-Magis - Registro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/fontawesome/css/all.css" rel="stylesheet">
+    <link href="../css/EstilosRegistro.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <div id="div-login" class="row">
+            <div class="col-xl-7" id="div1">
+                <div class="padingtext col-xl-12 sm ">
+                    <img src="../img/logo2Colores.png">
+                </div>
+                <div class="padingtext col-xl-12">
+                    <h4>Crear tu cuenta de Google</h4>
+                </div>
+                <div class="padingtext col-xl-12">
+                    <h6>Ir a Gmail</h6>
+                </div>
+                <form id="formulario1">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 sm">
+                            <input id="txt-nombre" type="text" class="input form form-control" placeholder="Nombre">
+                            <div class="valid-feedback">
+                                El apellido esta correcto!    
+                            </div>
+                            <div class="invalid-feedback">
+                              Este campo esta incorrecto
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 sm">
+                            <input id="txt-apellidos" type="text" class="input form form-control" placeholder="Apellidos">
+                            <div class="valid-feedback">
+                                El apellido esta correcto!    
+                            </div>
+                            <div class="invalid-feedback">
+                              Este campo esta incorrecto
+                            </div>
+                        </div>
+                        <div class="col-xl-12 sm">
+                                <input id="txt-correo" type="text" class="input form form-control" placeholder="ejemplo@gmail.com" onkeyup="validarEmail(this.value);">
+                                <div class="valid-feedback">
+                                    Correo valido!    
+                                </div>
+                                <div class="invalid-feedback">
+                                    Correo no es valido!
+                                </div>
+                        </div>
+                        <div class="col-xl-12">
+                            <a class="padingform a">Puedes utilizar letras, números y puntos</a>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 sm">
+                            <input id="txt-contraseña" type="password" class="input form form-control" placeholder="Contraseña" onkeyup="validarContraseña(this.value);">
+                            <div class="valid-feedback">
+                                Contraseña valida!    
+                            </div>
+                            <div class="invalid-feedback">
+                                Contraseña no es valida!
+                            </div>
+                        </div>
+                        <span class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-12 sm">
+                            <input id="txt-confirmar-contraseña" type="password" class="input form form-control" placeholder="Confirmar la Contraseña" onkeyup="confirmarContraseña(this.value);">
+                            <div class="valid-feedback">
+                                Contraseñas coinciden!    
+                            </div>
+                            <div class="invalid-feedback">
+                                Contraseñas no coinciden!
+                            </div>
+                        </span>
+                        <div id="ico" class="col-xl-1 sm a">
+                            <i class="fas fa-eye-slash"></i>
+                        </div>
+                        <div class="col-xl-12">
+                            <a class="padingform a">Utiliza 8 caracteres como mínimo, 15 como máximo con una combinación de letras, números y símbolos</a>
+                        </div>
+                        <div class="form padingform col-xl-12 sm">
+                            <span><a id="span" class="a b span" href="../ajax/Login.php">Prefiero iniciar sesión</a></span>
+                            <span><a id="btn" class="btns btn btn-primary" >SIGUIENTE</a></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xl-7" id="div2" style="display: none;">
+                <div class="padingtext col-xl-12 sm ">
+                    <img src="../img/logo2Colores.png">
+                </div>
+                <div class="padingtext col-xl-12">
+                    <h4>Verifica tu teléfono</h4>
+                </div>
+                <div class="padingtext col-xl-12 col-lg-12 col-md-12 col-sm-9 col-5">
+                    <h6>Por tu seguridad, G-Magis quiere confirmar tu identidad,
+                        de manera que te enviará un mensaje de texto con un código de verificación de seis
+                        dígitos <em>se aplicarán las tarifas estándar</em>
+                    </h6>
+                </div>
+                <form id="formulario2">
+                    <div class="row">
+                        <div class=" form col-xl-3 col-lg-3 col-md-3 col-sm-4 col-12">
+                            <select class="form-control" name="slc-pais" id="slc-pais">
+                                <option value="1">Honduras</option>
+                                <option value="2">Nicaragua</option>
+                                <option value="3">Alemania</option>
+                                <option value="4">Francia</option>
+                                <option value="5">Mexico</option>
+                            </select>
+                        </div>
+                        <div>
+                            <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-12 sm">
+                                <input id="txt-telefono" type="text" class="input form form-control" placeholder="telefono">
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 sm">
+                            <input type="text" id="txt-dia" placeholder="dia" class="input form form-control">
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 sm">
+                            <input type="text" id="txt-mes" placeholder="mes" class="input form form-control">
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 sm">
+                            <input type="text" id="txt-año" placeholder="año" class="input form form-control">
+                        </div>
+                        <div class="class col-12">
+                            <a class="padingform a">Tu fecha de nacimiento</a>
+                        </div>
+                        <div class="form padingform col-xl-12 sm">
+                            <span><a id="span2" class="a b span" href="Registro.html">Atrás</a></span>
+                            <span><a id="btn2" class="btns btn btn-primary">SIGUIENTE</a></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xl-7" id="div3" style="display: none;">
+                <div class="padingtext col-xl-12 sm ">
+                    <img src="../img/logo2Colores.png">
+                </div>
+                <h4>Privacidad y condiciones</h4>
+                <div class="padingtext col-xl-12 " style="overflow:scroll;height:400px;width:600px;">
+                    <h6>
+
+                        Para crear una cuenta de Gmagis, deberás aceptar las Condiciones del servicio que se encuentran a continuación.<br><br>
+                        
+                        Además, cuando creas una cuenta, procesamos tu información como se describe en nuestra Política de privacidad, incluidos estos puntos clave:<br><br>
+                        <b>Datos que procesamos cuando usa Google</b><br><br><br>
+                        
+                            Cuando configura una cuenta de Gmagis, almacenamos la información que proporciona, como su nombre, dirección de correo electrónico y número de teléfono.
+                            Por ejemplo, cuando usa los servicios de Gmagis para escribir un mensaje en Gmail o un comentario en un video de YouTube, almacenamos la información que genera.
+                            Por ejemplo, cuando busca un restaurante en Google Maps o mira un video en YouTube, procesamos información sobre esa actividad, lo que incluye los siguientes datos: el video que miró, los ID del dispositivo, las direcciones IP, los datos de cookie y la ubicación.
+                            Además, procesamos la información mencionada anteriormente cuando usa apps o sitios que utilizan servicios de Google, como anuncios, Analytics o el reproductor de video de YouTube.<br><br>
+                        
+                        <b>Por qué los procesamos</b><br><br><br>
+                        
+                        Procesamos estos datos con los fines que se describen en nuestra política, entre los que se incluyen los siguientes:<br><br>
+                        
+                            Contribuir a que nuestros servicios proporcionen contenido más útil y personalizado, como resultados de la búsqueda más relevantes.
+                            Desarrollar servicios nuevos y mejorar la calidad de los existentes.
+                            Proporcionar anuncios personalizados en función de la configuración de la cuenta, tanto en los servicios de Google como en los sitios y apps asociados a Google.
+                            Mejorar la seguridad mediante la protección del usuario ante casos de fraude y abuso.
+                            Llevar a cabo análisis y mediciones para comprender la forma en que se utilizan nuestros servicios. También contamos con socios que se encargan de esta tarea. Obtén más información sobre los socios específicos que realizan mediciones y publican anuncios.<br><br>
+                        
+                        <b>Combinación de datos</b><br><br><br>
+                        
+                        También se combinan estos datos entre los servicios y en tus dispositivos con estos fines. Por ejemplo, en función de la configuración de tu cuenta, te mostramos anuncios basados en la información de tus intereses, que podemos obtener a través de tu uso de Búsqueda y YouTube, y usamos datos de miles de millones de búsquedas para crear los modelos de corrección ortográfica que usamos en todos nuestros servicios.
+                        Tú tienes el control<br><br>
+                        
+                        De acuerdo con la configuración de tu cuenta, es posible que algunos de estos datos se asocien a tu cuenta de Gmagis y los consideremos información personal. Para controlar la forma en que recopilamos y usamos estos datos, haz clic en "Más opciones". Puedes ajustar los controles más tarde o cancelar tu consentimiento a futuro en Mi cuenta (myaccount.gmagis.com) en cualquier momento.
+                        
+                    </h6>
+                </div>
+                <div class="form padingform col-xl-12 sm">
+                    <span><a id="span3" class="a b span" href="Registro.html">Cancelar</a></span>
+                    <span><a href="../ajax/Login.php" id="btn3" class="btns btn btn-primary">ACEPTO</a></span>
+                </div>
+            </div>
+            <div id="account" class="col-xl-4">
+                <img src="../img/account.png">
+            </div>
+        </div>
+        <footer id="div-footer" class="row">
+            <div class="col-xl-6 col-lg-6 col-md-4 col-sm-4 col-12">
+                <select class="form-control" name="slc-idioma" id="slc-idioma">
+                    <option value="1">Español</option>
+                    <option value="2">Inglés</option>
+                    <option value="3">Arabe</option>
+                    <option value="4">Francés</option>
+                    <option value="5">Japones</option>
+                </select>
+            </div>
+            <span class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12"><a href="#" class="padingform b">Ayuda</a></span>
+            <span class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12"><a href="#" class="padingform b">Privacidad</a></span>
+            <span class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12"><a href="#" class="padingform b">Términos</a></span>
+        </footer>
+    </div>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/ValidarRegistro.js"></script>
+    <script src="../js/ControladorRegistro.js"></script>
+</body>
+</html>

@@ -16,7 +16,7 @@ $("#btn2").click(function(){
             console.log("Informacion a enviar: " + parametros);
         
         $.ajax({
-            url:"ajax/ProcesarRegistro.php",
+            url:"../ajax/ProcesarRegistro.php",
             method:"POST",
             data: parametros,
             dataType: "json",

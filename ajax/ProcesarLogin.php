@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $archivo = fopen("../usr/usuarios.json","r");
     $linea = "";
     while(($linea = fgets($archivo))){
@@ -6,6 +7,7 @@
         if($_POST["correo"] == $usuarios["correo"] && $_POST["password"] == $usuarios["password"]){
             $respuesta["codigo"] = 1;
             $respuesta["mensaje"] = "usuario y contraseña correcto..!";
+            $_SESSION["nombre"] = $usuarios["nombre"];
             echo json_encode($respuesta);
             exit();
         }

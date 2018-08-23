@@ -6,16 +6,16 @@
     <title>G-Magis - Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/Estilos-Logins.css" rel="stylesheet">
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/Estilos-Logins.css" rel="stylesheet">
 
 </head>
 <body>
     <div class="container">
         <div id="div-login" class="row">
             <div class="padingtext col-xl-12 sm ">
-                <img src="img/logo2Colores.png">
+                <img src="../img/logo2Colores.png">
             </div>
             <div class="padingtext col-xl-12">
                 <h4>Iniciar Sesión</h4>
@@ -25,7 +25,7 @@
             </div>
             <form id="formulario">
                 <div class="col-xl-12 sm">
-                    <input id="input" type="text" class="form-control" placeholder="correo electrónico teléfono">
+                    <input id="txt-correo" type="text" class="form-control input" placeholder="correo electrónico">
                 </div>
                 <div class="padingform col-xl-12">
                     <a class="a b" href="#">¿Haz olvidado tu correo electrónico?</a>
@@ -37,8 +37,31 @@
                     </p>
                 </div>
                 <div class="padingform col-xl-12 sm">
-                    <span><a id="span" class="a b" href="Registro1.html">Crear Cuenta</a></span>
-                    <span><a href="login2.html" id="btn" class="btn btn-primary">SIGUIENTE</a></span>
+                    <span><a id="span" class="a b span" href="../html/Registro.html">Crear Cuenta</a></span>
+                    <span><a id="btn-login" class="btns btn btn-primary">SIGUIENTE</a></span>
+                </div>
+            </form>
+        </div>
+        <div id="div-login2" class="row" style="display: none">
+            <div class="padingtext col-xl-12 sm ">
+                <img src="../img/logo2Colores.png">
+            </div>
+            <div class="padingtext col-xl-12">
+                <h4>Nombre de Usuario</h4>
+            </div>
+            <div class="padingtext col-xl-12">
+                <select class="form-control" name="slc-correo" id="slc-correo">
+                    <option value="1">Correo del usuario actual</option>
+                    <option value="2">Otra cuenta</option>
+                </select>
+            </div>
+            <form id="formulario2">
+                <div class="col-xl-12 sm">
+                    <input id="txt-password" type="text" class="input form-control" placeholder="contraseña">
+                </div>
+                <div class="padingform col-xl-12 sm">
+                    <span><a id="span2" class="a b" href="#">¿Haz olvidado tu contraseña?</a></span>
+                    <span><a id="btn2-login" class="btns btn btn-primary">SIGUIENTE</a></span>
                 </div>
             </form>
         </div>
@@ -57,5 +80,8 @@
             <span class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2"><a href="#" class="padingform b">Términos</a></span>
         </footer>
     </div>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/ValidarLogin.js"></script>
 </body>
 </html>

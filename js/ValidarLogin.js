@@ -8,15 +8,15 @@ $("#btn2-login").click(function(){
     var parametros = "correo="+$("#txt-correo").val()+"&password="+$("#txt-password").val();
     console.log("Informacion a enviar: " + parametros);
     $.ajax({
-        url:"ajax/ProcesarLogin.php",
+        url:"ProcesarLogin.php",
         method:"POST",
         data: parametros,
         dataType:"json",
         success:function(respuesta){
             if(respuesta.codigo == 1){
-                console.log(respuesta.mensaje);
+                window.location = "PaginaPrincipal.php";
             }else if(respuesta.codigo == 2){
-                console.log(respuesta.mensaje);
+                window.location = "Home.php";
             }
         },
         error:function(error){
