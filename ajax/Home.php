@@ -24,7 +24,6 @@
       </span>
       <input id="txtBuscar" class="form-control form-control-dark w-100" 
       type="text" placeholder="Buscar en G-Magis" aria-label="Search">
-      <i id="inav" class="fas fa-th"></i>
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
           <a href="Login.php" type="button" class="btn btn-primary" >Iniciar Sesión</a>
@@ -44,7 +43,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="../html/Registro.html">
                   <span class="spannav" data-feather="bar-chart-2"><i class="fab fa-google-plus-g"></i></span>
                   Unirse a G-Magis
                 </a>

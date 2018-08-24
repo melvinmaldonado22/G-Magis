@@ -14,9 +14,94 @@
     <link href="../css/fontawesome/css/all.css" rel="stylesheet">
     <link href="../css/redefinir.css" rel="stylesheet">
     <style>
-      .publicacion{
-        background-color:white;
-        width:180px;
+      .dropbtn {
+          background-color: transparent !important;
+          color: transparent !important;
+          padding: 0px;
+          font-size: 0px;
+          border: none;
+          cursor: pointer;
+
+      }
+
+      .dropbtn:hover, .dropbtn:focus {
+          background-color: none;
+      }
+
+      .dropdown {
+          float: right;
+          position: relative;
+          display: inline-block;
+          right: -45px;
+      }
+
+      .img-thumbnail {
+          padding: 0rem;
+          background-color: #fff;
+          border: 1px solid #dee2e6;
+          border-radius: .25rem;
+          max-width: 30%;
+          height: auto;
+      }
+      .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #ffff;
+          min-width: 160px;
+          overflow: auto;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          right: 0;
+          z-index: 1;
+          padding: 7px;
+      }
+
+      .dropdown-content a {
+          color: black;
+          padding: 1px 1px;
+          text-decoration: none;
+          display: block;
+      }
+
+      .dropdown a:hover {background-color: #ddd;}
+
+      .show {display: block;}
+
+      .dropdown-content a:hover {background-color: #ddd;}
+
+      .dropdown:hover .dropdown-content {display: block;}
+
+      .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+      .pl-3, .px-3 {
+          padding-left: 0rem!important;
+      }
+      .pr-3, .px-3 {
+          padding-right: 0rem!important;
+      }
+      .img-menu{
+        height:65px;
+        width: 65px;
+      }
+      #t-iconos td{
+        padding:20px;
+      }
+      #t-usuario td{
+        padding:2px;
+      }
+      .img-usr{
+        height:20px;
+        width: 20px;
+      }
+      .span0 {
+        width: 0;
+        margin-left: 0;
+      }
+      #barra contenedor {
+        height: 200px;
+        -webkit-transition: width 0.3s ease, margin 0.3s ease;
+        -moz-transition: width 0.3s ease, margin 0.3s ease;
+        -o-transition: width 0.3s ease, margin 0.3s ease;
+        transition: width 0.3s ease, margin 0.3s ease;
       }
     </style>
 
@@ -24,24 +109,63 @@
   
   <body>
     <nav class="navbar fixed-top bg-dark flex-md-nowrap p-0 shadow navbar-fixed-top">
-      <span ><i id="font" class="fas fa-bars"></i></span>
+      <a href="#" id="sidebar"><i id="font" class="fas fa-bars"></i></a>
       <a class="marginnav" href="PaginaPrincipal.php"><img src="../img/logo2.png"></a>
       <span>
         <strong class="marginnav" id="PaginaPrincipal" >Página Principal</strong>
       </span>
       <input id="txtBuscar" class="form-control form-control-dark w-100" 
       type="text" placeholder="Buscar en G-Magis" aria-label="Search">
-      <i id="inav" class="fas fa-th"></i>
-      <ul class="navbar-nav px-3">
+
+        <div class="dropdown">
+          <button class="dropbtn"><i id="inav" class="fas fa-th"></i></button>
+          <div class="dropdown-content">
+            <table id="t-iconos">
+            <tr>
+              <td><a href="" title="G-mail"><img src="../img/ico1.png" border="0" class="img-menu"></a></td>
+              <td><a href="https://www.youtube.com/?hl=es-419" title="Youtube"><img src="../img/ico2.png" border="0" class="img-menu"></a></td>
+              <td><a href="https://www.google.com/drive/" title="Google Drive"><img src="../img/ico3.png" border="0" class="img-menu"></a></td>
+            </tr>
+            <tr>
+              <td><a href="https://www.google.hn/" title="Google"><img src="../img/ico4.png" border="0" class="img-menu"></a></td>
+              <td><a href="#" title="ir a:"><img src="../img/ico5.png" border="0" class="img-menu"></a></td>
+              <td><a href="#" title="ir a:"><img src="../img/ico6.png" border="0" class="img-menu"></a></td>
+            </tr>
+            <tr>
+              <td><a href="#" title="ir a:"><img src="../img/ico7.png" border="0" class="img-menu"></a></td>
+              <td><a href="https://chrome.google.com/webstore/category/extensions?hl=es-419" title="Crome Store"><img src="../img/ico8.png" border="0" class="img-menu"></a></td>
+              <td><a href="#" title="ir a:"><img src="../img/ico9.png" border="0" class="img-menu"></a></td>
+            </tr>
+            </table>
+          </div>
+        </div>
+
+        <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-          <a href="logout.php" type="button" class="btn btn-primary" >Salir</a>
+          <div class="dropdown">
+            <a class="dropbtn"><img src="../img/androide_18.jpg" class="img-fluid rounded-circle img-thumbnail tamanio"></a>
+            <div class="dropdown-content">
+              <table id="t-usuario">
+                <tr>
+                  <td><a href="#" title="Ver Perfil:"><img src="../img/perfil.png" border="0" class="img-usr"></a></td>
+                  <td><a href="#">Ver Perfil</a></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="Configuración:"><img src="../img/configuracion.png" border="0" class="img-usr"></a></td>
+                  <td><a href="#">Configuración</a></td>
+                </tr>
+                <tr>
+                  <td><a href="logout.php" title="Cerrar Sesión:"><img src="../img/cerrar-sesion.png" border="0" class="img-usr"></a></td>
+                  <td><a href="logout.php">Cerrar Sesión</a></td>
+                </tr>
+              </table>
         </li>
       </ul>
     </nav>
 
     <div class="container-fluid">
       <div class="row">
-        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <nav id="barra" class="col-md-2 d-none d-md-block bg-light sidebar">
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
@@ -120,7 +244,7 @@
           </div>
         </nav>
         
-    <section class="seccion2Home">
+    <section id="contenido" class="seccion2Home">
         <div class="publicacion">
           <span><input type="text"></span>
           <span><i class="fas fa-camera"></i></span>
@@ -141,5 +265,13 @@
         </div>
       </div><!--final card columns--> 
     </section>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script>
+        $("#sidebar").click(function () {
+          $('#contenido').toggleClass('span12 span9');
+          $('#barra').toggleClass('span0 span3');
+      });
+    </script>
   </body>
 </html>
