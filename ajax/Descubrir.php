@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
 
     <title>G-Magis - Descubrir</title>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/fontawesome/css/all.css" rel="stylesheet">
-    <link href="css/redefinir.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/fontawesome/css/all.css" rel="stylesheet">
+    <link href="../css/redefinir.css" rel="stylesheet">
 
   </head>
   

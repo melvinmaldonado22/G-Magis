@@ -220,25 +220,25 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../Descubrir.html">
+                <a class="nav-link" href="Descubrir.php">
                   <span class="spannav" data-feather="file"><i class="fas fa-compass"></i></span>
                   Descubrir<span class="sr-only">(current)</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../Comunidades.html">
+                <a class="nav-link" href="Comunidades.php">
                   <span class="spannav" data-feather="shopping-cart"><i class="fas fa-universal-access"></i></span>
                   Comunidades
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="Perfil.php">
                   <span class="spannav" data-feather="users"><i class="fas fa-user-circle"></i></span>
                   Perfil
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="Personas.php">
                   <span class="spannav" data-feather="bar-chart-2"><i class="fas fa-user-friends"></i></span>
                   Personas
                 </a>
@@ -250,7 +250,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../Juego.html">
+                <a class="nav-link" href="../html/Juego.html">
                   <span class="spannav" data-feather="file-text"><i class="fas fa-gamepad"></i></span>
                   Jugar
                 </a>
