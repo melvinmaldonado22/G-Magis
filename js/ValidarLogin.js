@@ -1,6 +1,11 @@
 $("#btn-login").click(function(){
     $("#div-login").css("display","none");
+    $("#slc-correo").append(
+        `<option value="1">${$("#txt-correo").val()}</option>
+         <option value="2">Otra cuenta</option>`
+    );
     $("#div-login2").fadeIn(800);
+    
 })
 
 

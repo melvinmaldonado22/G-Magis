@@ -103,6 +103,51 @@
         -o-transition: width 0.3s ease, margin 0.3s ease;
         transition: width 0.3s ease, margin 0.3s ease;
       }
+      .publicacion{
+        background-color: white;
+        width: 336px;
+        height: 58px;
+        padding: -10px;
+        margin-bottom: 3px;
+        border-radius: 8px
+      }
+      .caja-texto{
+        width: 222px;
+        border: none;
+        height: 49px;
+        margin-right: 9px;
+        padding: 10px;
+        font-size: 14px;
+      }
+      .tamanio2{
+        margin-left: 7px;
+        width: 40px;
+        padding: -1px;
+        margin-bottom: 14px;
+      }
+      .camara{
+        font-size: 24px;
+        color: grey;
+        padding: -1px;
+        margin-top: 15px;
+      }
+      .comentar{
+        width: 164px;
+        border: none;
+      }
+      .tamanio3{
+        margin-left: 0px;
+        width: 26px;
+        margin-bottom: 10px;
+        margin-right: 2px;
+      }
+      .nu{
+        color: #39AE75;
+        text-decoration:none;
+      }
+      .img-modal{
+        height: 100px;
+      }
     </style>
 
   </head>
@@ -143,7 +188,7 @@
         <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
           <div class="dropdown">
-            <a class="dropbtn"><img src="../img/androide_18.jpg" class="img-fluid rounded-circle img-thumbnail tamanio"></a>
+            <a class="dropbtn"><img src="../img/profile.jpg" class="img-fluid rounded-circle img-thumbnail tamanio"></a>
             <div class="dropdown-content">
               <table id="t-usuario">
                 <tr>
@@ -245,26 +290,67 @@
         </nav>
         
     <section id="contenido" class="seccion2Home">
-        <div class="publicacion">
-          <span><input type="text"></span>
-          <span><i class="fas fa-camera"></i></span>
-        </div>
+        
       <div class="card-columns">
+      <div class="card">
+          <div class="publicacion">
+            <span><a class="dropbtn"><img src="../img/profile.jpg" class="img-fluid rounded-circle img-thumbnail tamanio2"></a></span>
+            <span><input type="text" id="txt-comentario" class="caja-texto" placeholder="¿Tienes algo nuevo que contar?"></span>
+            <span><a id="camara"><i class="fas fa-camera camara"></i></a></span>
+          </div>
+        </div>
         <div class="card">
           <div class="card-body">
+            <span><a class="dropbtn"><img src="../img/profile.jpg" class="img-fluid rounded-circle img-thumbnail tamanio2"></a></span>
+            <span><?php echo '<a href="#" class="nu">'.$_SESSION["nombre"].'</a>' ?></span>
             <h5 class="card-title">Universo Obserbable</h5>
             <p class="card-text">Galaxia Mh-65482 a 600 años luz de la vía lactea</p>
           </div>
           <img class="card-img-top" src="../img/tarjeta.jpg" alt="Card image cap">
           <div class="card-body">
-            <p class="card-text">
-              únete a nuestra comunidad y disfruta de la mejor colección de imagenes HD 
-              y 4K del universo y mas.
-            </p>
+            <a class="dropbtn"><img src="../img/profile.jpg" class="img-fluid rounded-circle img-thumbnail tamanio3"></a>
+            <input type="text" id="txt-comentario" placeholder="Agregar un comentario..." class="comentar">
+            <a class="dropbtn"><img src="../img/+1.jpg" class="img-fluid rounded-circle img-thumbnail tamanio3"></a>
+            45
+            <a class="dropbtn"><img src="../img/compartir.jpg" class="img-fluid rounded-circle img-thumbnail tamanio3"></a>
+            45
           </div>
         </div>
       </div><!--final card columns--> 
     </section>
+
+    <!--VENTANA MODAL-->
+
+    <div class="modal fade" id="modal-detalle" tabindex="-1" role="dialog"  aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content" style="width:120%">
+          <div class="modal-header">
+            <h5 class="modal-title">Detalle archivo</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="borrar">
+            <div id="co-copy"></div>
+            <select>
+            <?php
+              $archivo = fopen("../data/img.json","r");
+              $linea = "";
+              while($linea = fgets($archivo)){
+                $img = json_decode($linea,true);
+                echo '<option id="img">'.$img["img"].'</option>';
+              }
+            ?>
+              
+            </select>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" id="post">Aceptar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script>
@@ -272,6 +358,21 @@
           $('#contenido').toggleClass('span12 span9');
           $('#barra').toggleClass('span0 span3');
       });
+    </script>
+    <script>
+      $("#camara").click(function(){
+        console.log("holaaa");
+        $("#modal-detalle").modal("show");
+        $("#co-copy").append(
+            `<input type="text" class="caja-texto" value="${$("#txt-comentario").val()}">`
+          ); 
+      })
+    </script>
+    <script>
+      $("#post").click(function(){
+        var parametros = "comentario="+$("txt-comentario").val()+"&imagen="+$("#img").val();
+        console.log("se enviaran estos parametros" , parametros);
+      })
     </script>
   </body>
 </html>

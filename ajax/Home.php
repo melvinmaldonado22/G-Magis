@@ -18,9 +18,9 @@
   <body>
     <nav class="navbar fixed-top bg-dark flex-md-nowrap p-0 shadow navbar-fixed-top">
       <span ><i id="font" class="fas fa-bars"></i></span>
-      <a class="marginnav" href="PaginaPrincipal.html"><img src="../img/logo2.png"></a>
+      <a class="marginnav" href="Home.php"><img src="../img/logo2.png"></a>
       <span>
-        <strong class="marginnav" id="PaginaPrincipal" >Home</strong>
+        <strong class="marginnav" id="PaginaPrincipal" >Descubrir</strong>
       </span>
       <input id="txtBuscar" class="form-control form-control-dark w-100" 
       type="text" placeholder="Buscar en G-Magis" aria-label="Search">
@@ -37,7 +37,7 @@
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link" href="../html/Descubrir.html">
+                <a class="nav-link" href="Home.php">
                   <span class="spannav" data-feather="file"><i class="fas fa-compass"></i></span>
                   Descubrir<span class="sr-only">(current)</span>
                 </a>

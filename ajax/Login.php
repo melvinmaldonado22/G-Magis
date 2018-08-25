@@ -50,14 +50,11 @@
                 <h4>Nombre de Usuario</h4>
             </div>
             <div class="padingtext col-xl-12">
-                <select class="form-control" name="slc-correo" id="slc-correo">
-                    <option value="1">Correo del usuario actual</option>
-                    <option value="2">Otra cuenta</option>
-                </select>
+                <select class="form-control" name="slc-correo" id="slc-correo"></select>
             </div>
             <form id="formulario2">
                 <div class="col-xl-12 sm">
-                    <input id="txt-password" type="text" class="input form-control" placeholder="contraseña">
+                    <input id="txt-password" type="password" class="input form-control" placeholder="contraseña">
                 </div>
                 <div class="padingform col-xl-12 sm">
                     <span><a id="span2" class="a b" href="#">¿Haz olvidado tu contraseña?</a></span>

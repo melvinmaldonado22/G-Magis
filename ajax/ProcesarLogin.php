@@ -8,6 +8,7 @@
             $respuesta["codigo"] = 1;
             $respuesta["mensaje"] = "usuario y contraseña correcto..!";
             $_SESSION["nombre"] = $usuarios["nombre"];
+            $_SESSION["correo"] = $usuarios["correo"];
             echo json_encode($respuesta);
             exit();
         }
