@@ -1,3 +1,4 @@
+<?php include("seguridad.php"); ?>
 <!doctype html>
 <html lang="es">
   <head>
@@ -13,56 +14,247 @@
     <link href="../css/fontawesome/css/all.css" rel="stylesheet">
     <link href="../css/redefinir.css" rel="stylesheet">
 
+    <style>
+      .dropbtn {
+          background-color: transparent !important;
+          color: transparent !important;
+          padding: 0px;
+          font-size: 0px;
+          border: none;
+          cursor: pointer;
+
+      }
+
+      .dropbtn:hover, .dropbtn:focus {
+          background-color: none;
+      }
+
+      .dropdown {
+          float: right;
+          position: relative;
+          display: inline-block;
+          right: -45px;
+      }
+
+      .img-thumbnail {
+          padding: 0rem;
+          background-color: #fff;
+          border: 1px solid #dee2e6;
+          border-radius: .25rem;
+          max-width: 30%;
+          height: auto;
+      }
+      .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #ffff;
+          min-width: 160px;
+          overflow: auto;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          right: 0;
+          z-index: 1;
+          padding: 7px;
+      }
+
+      .dropdown-content a {
+          color: black;
+          padding: 1px 1px;
+          text-decoration: none;
+          display: block;
+      }
+
+      .dropdown a:hover {background-color: #ddd;}
+
+      .show {display: block;}
+
+      .dropdown-content a:hover {background-color: #ddd;}
+
+      .dropdown:hover .dropdown-content {display: block;}
+
+      .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+      .pl-3, .px-3 {
+          padding-left: 0rem!important;
+      }
+      .pr-3, .px-3 {
+          padding-right: 0rem!important;
+      }
+      .img-menu{
+        height:65px;
+        width: 65px;
+      }
+      #t-iconos td{
+        padding:20px;
+      }
+      #t-usuario td{
+        padding:2px;
+      }
+      .img-usr{
+        height:20px;
+        width: 20px;
+      }
+      .span0 {
+        width: 0;
+        margin-left: 0;
+      }
+      #barra contenedor {
+        height: 200px;
+        -webkit-transition: width 0.3s ease, margin 0.3s ease;
+        -moz-transition: width 0.3s ease, margin 0.3s ease;
+        -o-transition: width 0.3s ease, margin 0.3s ease;
+        transition: width 0.3s ease, margin 0.3s ease;
+      }
+      .publicacion{
+        background-color: white;
+        width: 336px;
+        height: 58px;
+        padding: -10px;
+        margin-bottom: 3px;
+        border-radius: 8px
+      }
+      .caja-texto{
+        width: 222px;
+        border: none;
+        height: 49px;
+        margin-right: 9px;
+        padding: 10px;
+        font-size: 14px;
+      }
+      .tamanio2{
+        margin-left: 7px;
+        width: 40px;
+        padding: -1px;
+        margin-bottom: 14px;
+      }
+      .camara{
+        font-size: 24px;
+        color: grey;
+        padding: -1px;
+        margin-top: 15px;
+      }
+      .comentar{
+        width: 164px;
+        border: none;
+      }
+      .tamanio3{
+        margin-left: 0px;
+        width: 26px;
+        margin-bottom: 10px;
+        margin-right: 2px;
+      }
+      .nu{
+        color: #39AE75;
+        text-decoration:none;
+      }
+      .card-columns .card {
+        display: inline-block;
+        width: 67%;
+      }
+      .card-div{
+        margin: 9px;
+        padding: 0px;
+        border-radius:9px;
+        background-color: white;
+      }
+      .card-body-div{
+        padding: 13px;
+      }
+      .card-img-top {
+        width: 100%;
+        border-top-left-radius: calc(0.25rem - 1px);
+        border-top-right-radius: calc(0.25rem - 1px);
+      }  
+    </style>
+
   </head>
   
   <body>
     <nav class="navbar fixed-top bg-dark flex-md-nowrap p-0 shadow navbar-fixed-top">
-      <span ><i id="font" class="fas fa-bars"></i></span>
-      <a class="marginnav" href="PaginaPrincipal.html"><img src="img/logo2.png"></a>
+      <a href="#" id="sidebar"><i id="font" class="fas fa-bars"></i></a>
+      <a class="marginnav" href="PaginaPrincipal.php"><img src="../img/logo2.png"></a>
       <span>
         <strong class="marginnav" id="PaginaPrincipal" >Descubrir</strong>
       </span>
       <input id="txtBuscar" class="form-control form-control-dark w-100" 
       type="text" placeholder="Buscar en G-Magis" aria-label="Search">
-      <i id="inav" class="fas fa-th"></i>
-      <ul class="navbar-nav px-3">
+
+        <div class="dropdown">
+          <button class="dropbtn"><i id="inav" class="fas fa-th"></i></button>
+          <div class="dropdown-content">
+            <table id="t-iconos">
+            <tr>
+              <td><a href="" title="G-mail"><img src="../img/ico1.png" border="0" class="img-menu"></a></td>
+              <td><a href="https://www.youtube.com/?hl=es-419" title="Youtube"><img src="../img/ico2.png" border="0" class="img-menu"></a></td>
+              <td><a href="https://www.google.com/drive/" title="Google Drive"><img src="../img/ico3.png" border="0" class="img-menu"></a></td>
+            </tr>
+            <tr>
+              <td><a href="https://www.google.hn/" title="Google"><img src="../img/ico4.png" border="0" class="img-menu"></a></td>
+              <td><a href="#" title="ir a:"><img src="../img/ico5.png" border="0" class="img-menu"></a></td>
+              <td><a href="#" title="ir a:"><img src="../img/ico6.png" border="0" class="img-menu"></a></td>
+            </tr>
+            <tr>
+              <td><a href="#" title="ir a:"><img src="../img/ico7.png" border="0" class="img-menu"></a></td>
+              <td><a href="https://chrome.google.com/webstore/category/extensions?hl=es-419" title="Crome Store"><img src="../img/ico8.png" border="0" class="img-menu"></a></td>
+              <td><a href="#" title="ir a:"><img src="../img/ico9.png" border="0" class="img-menu"></a></td>
+            </tr>
+            </table>
+          </div>
+        </div>
+
+        <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-          <a href="login1.html" type="button" class="btn btn-primary">Iniciar Sesión</a>
+          <div class="dropdown">
+            <a class="dropbtn"><img src="../img/profile.jpg" class="img-fluid rounded-circle img-thumbnail tamanio"></a>
+            <div class="dropdown-content">
+              <table id="t-usuario">
+                <tr>
+                  <td><a href="#" title="Ver Perfil:"><img src="../img/perfil.png" border="0" class="img-usr"></a></td>
+                  <td><a href="#">Ver Perfil</a></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="Configuración:"><img src="../img/configuracion.png" border="0" class="img-usr"></a></td>
+                  <td><a href="#">Configuración</a></td>
+                </tr>
+                <tr>
+                  <td><a href="logout.php" title="Cerrar Sesión:"><img src="../img/cerrar-sesion.png" border="0" class="img-usr"></a></td>
+                  <td><a href="logout.php">Cerrar Sesión</a></td>
+                </tr>
+              </table>
         </li>
       </ul>
     </nav>
 
     <div class="container-fluid">
       <div class="row">
-        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <nav id="barra" class="col-md-2 d-none d-md-block bg-light sidebar">
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" href="PaginaPrincipal.html">
+                <a class="nav-link active" href="PaginaPrincipal.php">
                   <span class="spannav" data-feather="home"><i class="fas fa-home"></i></span>
                   Página Principal <span class="sr-only">(current)</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="Descubrir.html">
+                <a class="nav-link" href="Descubrir.php">
                   <span class="spannav" data-feather="file"><i class="fas fa-compass"></i></span>
                   Descubrir<span class="sr-only">(current)</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="Comunidades.html">
+                <a class="nav-link" href="Comunidades.php">
                   <span class="spannav" data-feather="shopping-cart"><i class="fas fa-universal-access"></i></span>
                   Comunidades
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="Perfil.php">
                   <span class="spannav" data-feather="users"><i class="fas fa-user-circle"></i></span>
                   Perfil
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="Personas.php">
                   <span class="spannav" data-feather="bar-chart-2"><i class="fas fa-user-friends"></i></span>
                   Personas
                 </a>
@@ -74,7 +266,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="Juego.html">
+                <a class="nav-link" href="../html/Juego.html">
                   <span class="spannav" data-feather="file-text"><i class="fas fa-gamepad"></i></span>
                   Jugar
                 </a>
@@ -113,117 +305,35 @@
           </div>
         </nav>
         
-    <section class="seccion2Home">
-      <div class="card-columns">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Universo Obserbable</h5>
-            <p class="card-text">Galaxia Mh-65482 a 600 años luz de la vía lactea</p>
-          </div>
-          <img class="card-img-top" src="img/tarjeta.jpg" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text">
-              únete a nuestra comunidad y disfruta de la mejor colección de imagenes HD 
-              y 4K del universo y mas.
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Anime para todos</h5>
-            <p class="card-text">
-              Descarga las mejores series en español latino y sub español 
-              con enlace de descarga directo a mega
-            </p>
-          </div>
-          <img class="card-img-top" src="img/tarjeta2.jpg" alt="Card image cap">
-        </div>
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Vive la pasión del deporte</h5>
-            <p class="card-text">
-              Únete a nuestra comunidad para estar al tanto de lo  último 
-              en el mundo del deporte
-            </p>
-          </div>
-          <img class="card-img-top" src="img/tarjeta3.jpg" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text">Cristiano Ronaldo abandona el madrid y ahora jugará en la juventus</p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">BBC News</h5>
-            <p class="card-text">
-              Los líderes de la OTAN planean centrar su atención en el conflicto en Afganistán,
-              en el segundo día de una cumbre hasta ahora dominada por las demandas del 
-              presidente Donald Trump.
-            </p>
-          </div>
-          <img class="card-img-top" src="img/tarjeta4.jpg" alt="Card image cap">
-          <img class="card-img-top" src="img/tarjeta4,1.jpg" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text">
-              Trump pidió el miércoles a los aliados de la OTAN que comprometan el 4% de su producción anual (PIB) 
-              con el gasto militar. También señaló a Alemania por sus críticas sobre sus gastos de defensa.
-              Los líderes de la OTAN esperan un tono más conciliatorio el jueves antes de que Trump se vaya al 
-              Reino Unido. En tweets matutinos de Bruselas, el presidente de los EE. UU. Retomó sus críticas.
-              "¡Los EE. UU. Pagan decenas de miles de millones de dólares en gran medida para subsidiar a Europa 
-              y pierden lo grande en el comercio!" él declaró.
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Farandula en el mundo</h5>
-            <p class="card-text">Jim Carrey cada vez hace comentarios que hacen dudar de su estado mental</p>
-          </div>
-          <img class="card-img-top" src="img/tarjeta5.jpg" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text">
-              Jim Carrey le ha declarado la guerra a Facebook, tal y como ha anunciado el actor en
-              su cuenta de Twitter, a través de la que ha hecho un llamamiento a sus seguidores 
-              para que sigan sus pasos. "Me estoy deshaciendo de mis acciones de Facebook y 
-              eliminando mi perfil porque Facebook se aprovechó de la interferencia de Rusia 
-              en nuestras elecciones y aún no están haciendo lo suficiente para pararlo. Animo a  
-              todos los inversores que se preocupan por nuestro futuro a hacer lo mismo", espeta 
-              en el mensaje al que acompaña el hashtag #unfriendfacebook (deja de ser amigo de 
-              Facebook). El mensaje ya acumula más de 35.000 retuits. Facebook admitió en el 
-              Congreso que durante la campaña presidencial 126 millones de personas vieron en 
-              la red social contenidos generados por una firma vinculada al Gobieno ruso y que 
-              perseguían alterar el resultado electoral. La Justicia estadounidense, es más, está 
-              investigando la injerencia rusa en los comicios de noviembre de 2016.  El equipo de 
-              Zuckerberg ya anunció cambios para combatir las noticias falsas, como priorizar la 
-              información de familiares y amigos en vez de las publicaciones de marcas o medios de 
-              comunicación. TE RECOMENDAMOS Neve Campbell se vio superada por el éxito y por eso 
-              desapareció de Hollywood ¿Qué hay detrás de la marca zumos Don Simón? Contenido 
-              Patrocinado La filial turca de BBVA colapsa: pierde un 20% y su volumen se multiplica
-              por once Lainformacion.com TE PUEDE INTERESAR Antes y después de los actores de los
-              90 ENFEMENINO Una app que sigue tu equipaje, el invento del verano Computer Hoy 
-              Cómo tener un hogar conectado para saber lo que pasa dentro de casa Business 
-              Insider El producto que está haciendo temer a los fabricantes de aire… CoolAir 
-              Las Empresas De Relojes Están Enfurecidas Con Esta Promoción. Sólo Paga Envío. 
-              Silver Line Mansion Global Daily: Slowing Sales Price Growth in the U.K., 
-              Strengthening… Mansion Global recomendado por COMENTARIOS Iniciar sesión 19
-              comentarios Hace 154 días karoma pues hace bien, a ver lo que consigue.
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Rock aun vive</h5>
-            <p class="card-text">Los mejores éxitos del rock en español, únete y forma parte de la gran familia</p>
-          </div>
-          <img class="card-img-top" src="img/tarjeta6.jpg" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text">Descarga gratis los mejores hits en español:</p>
-            <p>-Soda estereo</p>
-            <p>-Enanitos verdes</p>
-            <p>-Heroes del silencio</p>
-            <p>Y muchos mas...</p>
-          </div>
-        </div>
-      </div><!--final card columns--> 
-    </section>
+    <section id="contenido" class="seccion2Home">
+    <div class="card-columns">> 
+        <?php
+          $archivo = fopen("../data/descubrir.json","r");
+          $linea = "";
+          while($linea = fgets($archivo)){
+            $contenido = json_decode($linea,true);
+            echo 
+            '<div class="card">
+              <img class="card-img-top" src="../img/descubrir/'.$contenido["imagen"].'" alt="Card image cap">
+              <div class="card-body-div">
+                <h6 class="card-title">'.$contenido["titulo"].'</h6>
+                <p class="card-text">'.$contenido["descripcion"].'</p>
+                <span><a class="dropbtn"><img src="../img/profile.jpg" class="img-fluid rounded-circle img-thumbnail tamanio2"></a></span>
+                <span>'.$contenido["nombre"].'  '.$contenido["apellidos"].'</a></span>
+              </div>
+              </div>
+            ';
+          }
+        ?>
+      </div>
+    </section><!--final card columns--> 
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script>
+        $("#sidebar").click(function () {
+          $('#contenido').toggleClass('span12 span9');
+          $('#barra').toggleClass('span0 span3');
+      });
+    </script>
   </body>
 </html>

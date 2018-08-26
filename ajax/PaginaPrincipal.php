@@ -132,7 +132,7 @@
         margin-top: 15px;
       }
       .comentar{
-        width: 164px;
+        width: 108px;
         border: none;
       }
       .tamanio3{
@@ -147,6 +147,11 @@
       }
       .img-modal{
         height: 100px;
+      }
+      .caja-texto-modal{
+        margin: 5px;
+        width: 560px;
+        margin-bottom: 20px;
       }
     </style>
 
@@ -295,27 +300,35 @@
       <div class="card">
           <div class="publicacion">
             <span><a class="dropbtn"><img src="../img/profile.jpg" class="img-fluid rounded-circle img-thumbnail tamanio2"></a></span>
-            <span><input type="text" id="txt-comentario" class="caja-texto" placeholder="¿Tienes algo nuevo que contar?"></span>
+            <span><a id="comentario"><input type="text" class="caja-texto" placeholder="¿Tienes algo nuevo que contar?"></a></span>
             <span><a id="camara"><i class="fas fa-camera camara"></i></a></span>
           </div>
         </div>
-        <div class="card">
-          <div class="card-body">
-            <span><a class="dropbtn"><img src="../img/profile.jpg" class="img-fluid rounded-circle img-thumbnail tamanio2"></a></span>
-            <span><?php echo '<a href="#" class="nu">'.$_SESSION["nombre"].'</a>' ?></span>
-            <h5 class="card-title">Universo Obserbable</h5>
-            <p class="card-text">Galaxia Mh-65482 a 600 años luz de la vía lactea</p>
-          </div>
-          <img class="card-img-top" src="../img/tarjeta.jpg" alt="Card image cap">
-          <div class="card-body">
-            <a class="dropbtn"><img src="../img/profile.jpg" class="img-fluid rounded-circle img-thumbnail tamanio3"></a>
-            <input type="text" id="txt-comentario" placeholder="Agregar un comentario..." class="comentar">
-            <a class="dropbtn"><img src="../img/+1.jpg" class="img-fluid rounded-circle img-thumbnail tamanio3"></a>
-            45
-            <a class="dropbtn"><img src="../img/compartir.jpg" class="img-fluid rounded-circle img-thumbnail tamanio3"></a>
-            45
-          </div>
-        </div>
+        <?php
+          $archivo = fopen("../data/post.json","r");
+          $linea = "";
+          while($linea = fgets($archivo)){
+            $contenido = json_decode($linea,true);
+            echo
+            '<div class="card">
+              <div class="card-body">
+                <span><a class="dropbtn"><img src="../img/profile.jpg" class="img-fluid rounded-circle img-thumbnail tamanio2"></a></span>
+                <span><a class="nu">'.$contenido["nombre"].'</a></span>
+                <h5 class="card-title">'.$contenido["titulo"].'</h5>
+                <p class="card-text">'.$contenido["descripcion"].'</p>
+              </div>
+              <img class="card-img-top" src="../img/post/'.$contenido["imagen"].'">
+              <div class="card-body">
+                <a class="dropbtn"><img src="../img/profile.jpg" class="img-fluid rounded-circle img-thumbnail tamanio3"></a>
+                <input type="text" placeholder="comentario..." class="comentar">
+                <a class="dropbtn" id="1"><img src="../img/+1.jpg" class="img-fluid rounded-circle img-thumbnail tamanio3"></a>
+                <span class="tamanio3" id="h6"></span>
+                <a class="dropbtn"><img src="../img/compartir.jpg" class="img-fluid rounded-circle img-thumbnail tamanio3"></a>
+                45
+              </div>
+            </div>';
+          }
+        ?>
       </div><!--final card columns--> 
     </section>
 
@@ -325,27 +338,28 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content" style="width:120%">
           <div class="modal-header">
-            <h5 class="modal-title">Detalle archivo</h5>
+            <h5 class="modal-title">Post</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body" id="borrar">
-            <div id="co-copy"></div>
-            <select>
+          <input type="text" id="txt-titulo" class="caja-texto caja-texto-modal" placeholder="titulo del post...">
+          <input type="text" id="txt-comentario" class="caja-texto caja-texto-modal" placeholder="¿Tienes algo nuevo que contar?...">
+            <select id="slc-imagen">
             <?php
-              $archivo = fopen("../data/img.json","r");
+              $archivo = fopen("../data/img.json", "r");
               $linea = "";
-              while($linea = fgets($archivo)){
-                $img = json_decode($linea,true);
-                echo '<option id="img">'.$img["img"].'</option>';
+              while(($linea = fgets($archivo))){
+                  $registro = json_decode($linea,true);
+                  echo '<option>'.$registro["img"].'</option>';
               }
+              fclose($archivo);
             ?>
-              
             </select>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" id="post">Aceptar</button>
+            <button type="button" class="btn btn-secondary" id="post" onclick="usuario(<?php $_SESSION["nombre"];?>);">Aceptar</button>
           </div>
         </div>
       </div>
@@ -353,26 +367,6 @@
 
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
-    <script>
-        $("#sidebar").click(function () {
-          $('#contenido').toggleClass('span12 span9');
-          $('#barra').toggleClass('span0 span3');
-      });
-    </script>
-    <script>
-      $("#camara").click(function(){
-        console.log("holaaa");
-        $("#modal-detalle").modal("show");
-        $("#co-copy").append(
-            `<input type="text" class="caja-texto" value="${$("#txt-comentario").val()}">`
-          ); 
-      })
-    </script>
-    <script>
-      $("#post").click(function(){
-        var parametros = "comentario="+$("txt-comentario").val()+"&imagen="+$("#img").val();
-        console.log("se enviaran estos parametros" , parametros);
-      })
-    </script>
+    <script src="../js/peticion-img.js"></script>
   </body>
 </html>
